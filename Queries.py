@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
-mongoClient = MongoClient("mongodb://localhost/")
-pokemonDB = mongoClient['pokemon']
+mongoClient = MongoClient("mongodb://localhost/pokemon")
+pokemonDB = mongoClient['pokemondb']
 pokemonColl = pokemonDB['pokemon_data']
 
 # Write a query that returns all the Pokemon named "Pikachu". (1pt)
@@ -12,10 +12,10 @@ print("-----------------------")
 # Write a query that returns all the Pokemon with an attack greater than 150. (1pt)
 greater_than = pokemonColl.find({"attack" : { "$gt": 150 }})
 for pokemon in greater_than:
-    print(pokemon['name'], pokemon['attack'])
+    print(pokemon['name'], pokemon['attack']) # added in attack to clearly see
 print("-----------------------")
 
 # Write a query that returns all the Pokemon with an ability of "Overgrow" (1pt)
 ability_overgrow = pokemonColl.find({ "abilities" : { "$regex" : "Overgrow" }})
 for pokemon in ability_overgrow:
-    print(pokemon['name'], pokemon['abilities'])
+    print(pokemon['name'], pokemon['abilities']) # added in abilities to clearly see
