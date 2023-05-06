@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
 mongoClient = MongoClient("mongodb://localhost/pokemon")
-pokemonDB = mongoClient['pokemondb']
+pokemonDB = mongoClient['pokemon']
 pokemonColl = pokemonDB['pokemon_data']
-print("I found " + pokemonColl.count_documents({}) + " pokemon")
+print("I found " + str(pokemonColl.count_documents({})) + " pokemon")

@@ -2,7 +2,7 @@ import random
 from pymongo import MongoClient
 
 mongoClient = MongoClient("mongodb://localhost/pokemon")
-pokemonDB = mongoClient['pokemondb']
+pokemonDB = mongoClient['pokemon']
 pokemonColl = pokemonDB['pokemon_data']
 
 def fetch(pokemonid):
